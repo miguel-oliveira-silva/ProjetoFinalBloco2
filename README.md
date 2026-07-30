@@ -1,7 +1,71 @@
-Projeto Farmácia — API RESTful (Spring Boot)API REST desenvolvida como projeto de avaliação do Bloco 02 do Bootcamp da Generation Brasil. O objetivo da aplicação é gerenciar o catálogo de produtos e categorias de um e-commerce de farmácia, implementando operações completas de CRUD e relacionamento entre entidades.🛠️ Tecnologias e FerramentasJava 17Spring Boot 3Spring Data JPASpring WebValidation (Bean Validation)MySQL (Banco de dados relacional)Spring Tool Suite (STS) / IntelliJ IDEAInsomnia (Testes de requisições HTTP)Git & GitHub (Versionamento de código)📐 Estrutura do Banco de Dados e RelacionamentoA aplicação conta com duas entidades principais conectadas por um relacionamento 1:N (Um para Muitos):Categoria (tb_categorias): Representa as seções da farmácia (ex: Medicamentos, Higiene, Cosméticos).Produto (tb_produtos): Representa os itens comercializados, vinculados obrigatoriamente a uma categoria.Regra de Negócio: Uma categoria pode conter vários produtos, mas cada produto pertence a apenas uma categoria (@ManyToOne em Produto e @OneToMany em Categoria com suporte a CascadeType.REMOVE).📌 Endpoints da APIAbaixo estão os endpoints disponíveis na aplicação para realização do CRUD em ambos os recursos.📁 Recurso Categoria (/categorias)MétodoEndpointDescriçãoGET/categoriasLista todas as categorias cadastradasGET/categorias/{id}Busca uma categoria pelo IDGET/categorias/nome/{nome}Busca categorias por nome/tipo (IgnoreCase/Containing)POST/categoriasCadastra uma nova categoriaPUT/categoriasAtualiza os dados de uma categoria existenteDELETE/categorias/{id}Remove uma categoria pelo ID💊 Recurso Produto (/produtos)MétodoEndpointDescriçãoGET/produtosLista todos os produtos cadastradosGET/produtos/{id}Busca um produto pelo IDGET/produtos/nome/{nome}Busca produtos pelo nome (IgnoreCase/Containing)POST/produtosCadastra um novo produto (requer ID da Categoria)PUT/produtosAtualiza os dados de um produto existenteDELETE/produtos/{id}Remove um produto pelo ID⚙️ Como Executar o Projeto LocalmentePré-requisitosJava 17 instalado.MySQL Server rodando localmente.Client HTTP de sua preferência (Insomnia, Postman, etc).Passo a passoClone o repositório:Bashgit clone https://github.com/SEU_USUARIO/projeto_final_bloco_02.git
-Configure o banco de dados:Verifique o arquivo src/main/resources/application.properties e ajuste as credenciais de acesso do seu MySQL se necessário:Propertiesspring.datasource.url=jdbc:mysql://localhost:3306/db_farmacia?createDatabaseIfNotExist=true&serverTimezone=UTC
-spring.datasource.username=SEU_USUARIO
-spring.datasource.password=SUA_SENHA
-spring.jpa.hibernate.ddl-auto=update
-Execute a aplicação:Pelo STS/Eclipse/IntelliJ: Rode a classe principal FarmaciaApplication.java.Ou via terminal:Bash./mvnw spring-boot:run
-A API estará acessível em: http://localhost:8080🌿 Histórico de Branches do ProjetoO desenvolvimento seguiu a metodologia de versionamento em branches sugerida:main: Branch principal contendo o código final consolidado após os merges.01_Configurando_Projeto: Estrutura inicial do Spring Boot e conexão com MySQL.02_CRUD_Categoria: Mapeamento da entidade Categoria e implementação do controlador/repositório.03_CRUD_Produto_Relacionamento: Mapeamento da entidade Produto, relacionamento @ManyToOne e endpoints completos.Desenvolvido durante o Bootcamp Java — Generation Brasil.
+# Projeto Farmácia — API RESTful (Spring Boot)
+
+API REST desenvolvida como projeto de avaliação do Bloco 02 do Bootcamp da Generation Brasil. O objetivo da aplicação é gerenciar o catálogo de produtos e categorias de um e-commerce de farmácia, implementando operações completas de CRUD e relacionamento entre entidades.
+
+---
+
+## 🛠️ Tecnologias e Ferramentas
+
+* **Java 17**
+* **Spring Boot 3**
+  * Spring Data JPA
+  * Spring Web
+  * Validation (Bean Validation)
+* **MySQL** (Banco de dados relacional)
+* **Spring Tool Suite (STS)** / IntelliJ IDEA
+* **Insomnia** (Testes de requisições HTTP)
+* **Git & GitHub** (Versionamento de código)
+
+---
+
+## 📐 Estrutura do Banco de Dados e Relacionamento
+
+A aplicação conta com duas entidades principais conectadas por um relacionamento **1:N (Um para Muitos)**:
+
+* **Categoria (`tb_categorias`)**: Representa as seções da farmácia (ex: *Medicamentos*, *Higiene*, *Cosméticos*).
+* **Produto (`tb_produtos`)**: Representa os itens comercializados, vinculados obrigatoriamente a uma categoria.
+
+> **Regra de Negócio:** Uma categoria pode conter vários produtos, mas cada produto pertence a apenas uma categoria (`@ManyToOne` em Produto e `@OneToMany` em Categoria com suporte a `CascadeType.REMOVE`).
+
+---
+
+## 📌 Endpoints da API
+
+Abaixo estão os endpoints disponíveis na aplicação para realização do CRUD em ambos os recursos.
+
+### 📁 Recurso Categoria (`/categorias`)
+
+| Método | Endpoint | Descrição |
+| :--- | :--- | :--- |
+| `GET` | `/categorias` | Lista todas as categorias cadastradas |
+| `GET` | `/categorias/{id}` | Busca uma categoria pelo ID |
+| `GET` | `/categorias/nome/{nome}` | Busca categorias por nome/tipo (IgnoreCase/Containing) |
+| `POST` | `/categorias` | Cadastra uma nova categoria |
+| `PUT` | `/categorias` | Atualiza os dados de uma categoria existente |
+| `DELETE` | `/categorias/{id}` | Remove uma categoria pelo ID |
+
+### 💊 Recurso Produto (`/produtos`)
+
+| Método | Endpoint | Descrição |
+| :--- | :--- | :--- |
+| `GET` | `/produtos` | Lista todos os produtos cadastrados |
+| `GET` | `/produtos/{id}` | Busca um produto pelo ID |
+| `GET` | `/produtos/nome/{nome}` | Busca produtos pelo nome (IgnoreCase/Containing) |
+| `POST` | `/produtos` | Cadastra um novo produto (requer ID da Categoria) |
+| `PUT` | `/produtos` | Atualiza os dados de um produto existente |
+| `DELETE` | `/produtos/{id}` | Remove um produto pelo ID |
+
+---
+
+## ⚙️ Como Executar o Projeto Localmente
+
+### Pré-requisitos
+* Java 17 instalado.
+* MySQL Server rodando localmente.
+* Client HTTP de sua preferência (Insomnia, Postman, etc).
+
+### Passo a passo
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/SEU_USUARIO/projeto_final_bloco_02.git](https://github.com/SEU_USUARIO/projeto_final_bloco_02.git)
