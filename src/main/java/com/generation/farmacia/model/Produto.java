@@ -43,7 +43,7 @@ public class Produto {
 	private String linkFoto;
 	
 	@ManyToOne
-	@JsonIgnoreProperties(value = "categoria", allowSetters = true)
+	@JsonIgnoreProperties(value = "produtos", allowSetters = true)
 	private Categoria categoria;
 
 	public Long getId() {
