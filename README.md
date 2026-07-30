@@ -4,7 +4,7 @@ API REST desenvolvida como projeto de avaliação do Bloco 02 do Bootcamp da Gen
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas
+## Tecnologias e Ferramentas
 
 * **Java 17**
 * **Spring Boot 3**
@@ -18,7 +18,7 @@ API REST desenvolvida como projeto de avaliação do Bloco 02 do Bootcamp da Gen
 
 ---
 
-## 📐 Estrutura do Banco de Dados e Relacionamento
+##  Estrutura do Banco de Dados e Relacionamento
 
 A aplicação conta com duas entidades principais conectadas por um relacionamento **1:N (Um para Muitos)**:
 
@@ -29,11 +29,11 @@ A aplicação conta com duas entidades principais conectadas por um relacionamen
 
 ---
 
-## 📌 Endpoints da API
+##  Endpoints da API
 
 Abaixo estão os endpoints disponíveis na aplicação para realização do CRUD em ambos os recursos.
 
-### 📁 Recurso Categoria (`/categorias`)
+###  Recurso Categoria (`/categorias`)
 
 | Método | Endpoint | Descrição |
 | :--- | :--- | :--- |
@@ -44,7 +44,7 @@ Abaixo estão os endpoints disponíveis na aplicação para realização do CRUD
 | `PUT` | `/categorias` | Atualiza os dados de uma categoria existente |
 | `DELETE` | `/categorias/{id}` | Remove uma categoria pelo ID |
 
-### 💊 Recurso Produto (`/produtos`)
+### Recurso Produto (`/produtos`)
 
 | Método | Endpoint | Descrição |
 | :--- | :--- | :--- |
@@ -56,16 +56,3 @@ Abaixo estão os endpoints disponíveis na aplicação para realização do CRUD
 | `DELETE` | `/produtos/{id}` | Remove um produto pelo ID |
 
 ---
-
-## ⚙️ Como Executar o Projeto Localmente
-
-### Pré-requisitos
-* Java 17 instalado.
-* MySQL Server rodando localmente.
-* Client HTTP de sua preferência (Insomnia, Postman, etc).
-
-### Passo a passo
-
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/SEU_USUARIO/projeto_final_bloco_02.git](https://github.com/SEU_USUARIO/projeto_final_bloco_02.git)
